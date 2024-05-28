@@ -1,1 +1,15 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+.number {
+  font-size: 300px;
+}
+.spade,
+.club {
+  font-size: 100px;
+  color: black;
+}
+
+.heart,
+.diamond {
+  font-size: 100px;
+  color: red;
+}
