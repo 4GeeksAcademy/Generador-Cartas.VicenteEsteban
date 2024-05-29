@@ -1,15 +1,10 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 .number {
-  font-size: 300px;
+  font-size: 175px;
 }
-.spade,
-.club {
-  font-size: 100px;
-  color: black;
+.palo {
+  font-size: 85px;
 }
-
-.heart,
-.diamond {
-  font-size: 100px;
-  color: red;
+body {
+  background: url(https://st2.depositphotos.com/2032035/6888/v/450/depositphotos_68887997-stock-illustration-poker-green-background.jpg);
 }

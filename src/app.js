@@ -1,18 +1,31 @@
 /* eslint-disable */
 import "bootstrap";
 import "./style.css";
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 window.onload = function() {
+  generateCard();
+};
+const randomButton = document.querySelector(".button");
+randomButton.addEventListener("click", generateCard);
+
+function generateCard() {
   //write your code here
+
   document.querySelector(`.paloTop`).innerHTML = generateRandomTop();
   document.querySelector(`.number`).innerHTML = generateRandomNumber();
   document.querySelector(`.paloBot`).innerHTML = document.querySelector(
     `.paloTop`
   ).innerHTML;
-};
+  let paloColor = document.querySelectorAll(".palo");
+  paloColor.forEach(palo => {
+    if (palo.innerHTML === "♦" || palo.innerHTML === "♥") {
+      palo.style.color = "red";
+      document.querySelector(".number").style.color = "red";
+    } else {
+      palo.style.color = "black";
+      document.querySelector(".number").style.color = "black";
+    }
+  });
+}
 let generateRandomNumber = () => {
   let number = [
     "A",
@@ -38,5 +51,3 @@ let generateRandomTop = () => {
   let indexTop = Math.floor(Math.random() * palo.length);
   return palo[indexTop];
 };
-let palo = document.querySelector("#palo");
-palo.style.color = "red";
