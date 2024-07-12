@@ -8,3 +8,16 @@
 body {
   background: url(https://st2.depositphotos.com/2032035/6888/v/450/depositphotos_68887997-stock-illustration-poker-green-background.jpg);
 }
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  transition: width 0.3s, height 0.3s;
+}
+.paloTop,
+.paloBot,
+.number {
+  transition: font-size 0.3s;
+}

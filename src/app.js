@@ -3,10 +3,13 @@ import "bootstrap";
 import "./style.css";
 window.onload = function() {
   generateCard();
+  cardSize();
 };
 const randomButton = document.querySelector(".button");
-randomButton.addEventListener("click", generateCard);
-
+randomButton.addEventListener("click", () => {
+  generateCard();
+  cardSize();
+});
 function generateCard() {
   //write your code here
 
@@ -26,6 +29,24 @@ function generateCard() {
     }
   });
 }
+function cardSize() {
+  const card = document.getElementById("card");
+  const maxWidth = document.getElementById("changeWidth").value;
+  const maxHeight = document.getElementById("changeHeight").value;
+
+  if (maxWidth) {
+    card.style.width = `${maxWidth}px`;
+  }
+  if (maxHeight) {
+    card.style.height = `${maxHeight}px`;
+  }
+  const newFontSize = Math.min(card.offsetWidth, card.offsetHeight) / 5;
+  document.querySelectorAll(".paloTop, .paloBot").forEach(element => {
+    element.style.fontSize = `${newFontSize}px`;
+  });
+  document.querySelector(".number").style.fontSize = `${newFontSize * 1.5}px`;
+}
+
 let generateRandomNumber = () => {
   let number = [
     "A",
